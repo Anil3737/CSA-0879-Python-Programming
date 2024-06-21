@@ -1,0 +1,17 @@
+def is_valid(s: str) -> bool:
+    bracket_pairs = {')': '(', '}': '{', ']': '['}
+    stack = []
+    for char in s:
+        if char in bracket_pairs.values():
+            stack.append(char)
+        elif char in bracket_pairs.keys():
+            if stack == [] or bracket_pairs[char] != stack.pop():
+                return False
+        else:
+            return False
+    return stack == []
+print(is_valid("()"))      # Output: true
+print(is_valid("()[]{}"))  # Output: true
+print(is_valid("(]"))      # Output: false
+print(is_valid("([)]"))    # Output: false
+print(is_valid("{[]}"))    # Output: true
