@@ -1,0 +1,22 @@
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def find_non_primes(A, B):
+    non_primes = []
+    for num in range(A, B + 1):
+        if not is_prime(num):
+            non_primes.append(num)
+    return non_primes
+
+# Sample Input
+A = 12
+B = 19
+
+# Find and print non-prime numbers between A and B
+non_prime_numbers = find_non_primes(A, B)
+print(", ".join(map(str, non_prime_numbers)))
