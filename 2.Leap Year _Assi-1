@@ -1,0 +1,13 @@
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+def find_anniversary_date(date_str):
+    day, month, year = map(int, date_str.split('/'))
+    if is_leap_year(year):
+        new_year = year + 1
+        result = f"Given Anniversary Year: Leap Year. Anniversary Date: {day:02d}/{month:02d}/{new_year}"
+    else:
+        new_year = year - 1
+        result = f"Given Anniversary Year: Non Leap Year. Anniversary Date: {day:02d}/{month:02d}/{new_year}"
+    return result
+input_date = "04/12/1946"
+print(find_anniversary_date(input_date))
