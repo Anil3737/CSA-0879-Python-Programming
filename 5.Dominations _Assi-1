@@ -1,0 +1,24 @@
+def get_denominations():
+    denominations = []
+    for i in range(1, 5):
+        denom = int(input(f"Enter the {i}st Denomination: "))
+        count = int(input(f"Enter the {i}st Denomination number of notes: "))
+        denominations.append((denom, count))
+    return denominations
+
+def calculate_total_balance(denominations):
+    total_balance = 0
+    for denom, count in denominations:
+        total_balance += denom * count
+    return total_balance
+
+# Get the denominations and counts from the user
+denominations = get_denominations()
+
+# Calculate the total available balance in the ATM
+total_balance = calculate_total_balance(denominations)
+
+# Print the total available balance
+print(f"Total Available Balance in ATM: {total_balance}")
+
+ 
