@@ -1,0 +1,32 @@
+def matrix_multiplication(A, B):
+    # Get the dimensions of the matrices
+    rows_A, cols_A = len(A), len(A[0])
+    rows_B, cols_B = len(B), len(B[0])
+
+    # Check if the matrices can be multiplied
+    if cols_A != rows_B:
+        raise ValueError("Number of columns in A must be equal to the number of rows in B")
+
+    # Create the result matrix and initialize with zeros
+    C = [[0 for _ in range(cols_B)] for _ in range(rows_A)]
+
+    # Perform matrix multiplication
+    for i in range(rows_A):
+        for j in range(cols_B):
+            for k in range(cols_A):
+                C[i][j] += A[i][k] * B[k][j]
+                
+    return C
+
+# Example usage
+A = [[1, 2, 3],
+     [4, 5, 6]]
+
+B = [[7, 8],
+     [9, 10],
+     [11, 12]]
+
+C = matrix_multiplication(A, B)
+print("Resultant Matrix C:")
+for row in C:
+    print(row)
