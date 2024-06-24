@@ -1,0 +1,7 @@
+def binary_to_decimal_builtin(binary_str):
+    return int(binary_str, 2)
+
+# Example usage
+binary_str = '1010'
+decimal_number = binary_to_decimal_builtin(binary_str)
+print(f"The decimal representation of binary {binary_str} is {decimal_number}")
