@@ -1,0 +1,16 @@
+str = input("Enter the String:")
+
+# Character to find
+c = input("Enter the character to find:")
+
+# Using Naive Method
+res = None
+j=0
+while j<len(str):
+    for i in range(0,len(str),1):
+        if str[i] == c:
+            res = True
+            print(str[i], "Index:",i)
+        j=j+1
+if res==None:
+    print("Character not found")

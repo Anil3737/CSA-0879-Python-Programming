@@ -1,0 +1,20 @@
+str = input("Enter the string:")
+vcount, ccount= 0,0 
+Vowels = "AaEeIiOoUu"
+c=[]
+v=[]
+#Converting entire string to lower case to reduce the comparisons  
+#str = str.lower()  
+for i in range(0,len(str)):   
+    #Checks whether a character is a vowel  
+    if str[i] in (Vowels):  
+        vcount = vcount + 1
+        v.append(str[i])
+        #count = [each for each in str if each in Vowels]
+     
+    elif (str[i] !=" " and str[i] not in (Vowels)):
+        ccount = ccount + 1
+        c.append(str[i])
+print("Total number of vowel and consonant are" );  
+print(vcount,v) 
+print(ccount,c)  

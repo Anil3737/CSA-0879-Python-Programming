@@ -1,0 +1,24 @@
+def modify_string(S):
+    frequency = {}  
+    
+    # Count the frequency of each character
+    for char in S:
+        frequency[char] = frequency.get(char, 0) + 1
+    
+    result = ""
+    
+    # Replace characters with the corresponding circular distance
+    for char in S:
+        circular_distance = ord(char) + frequency[char]
+        
+        if circular_distance > 122:
+            circular_distance -= 26
+        
+        result += chr(circular_distance)
+    
+    return result
+
+# Example usage:
+S = "ghee"
+modified_string = modify_string(S)
+print(modified_string)  # Output: higg
