@@ -1,0 +1,10 @@
+l=[14,67,48,23,5,62]
+asc=sorted(l)
+dsc=asc[::-1]
+n=int(input("enter which largest number:"))
+m=int(input("enter which smallestnumber:"))
+print(n,"largest:",dsc[n-1])
+print(m,"smallest:",asc[m-1])
+print("sum:",dsc[n-1]+asc[m-1])
+print("difference:",dsc[n-1]-asc[m-1])
+print("product:",dsc[n-1]*asc[m-1])
