@@ -1,0 +1,18 @@
+l=[]
+while True:
+    num=int(input("enter list elements:"))
+    if num==-1:
+        break
+    else:
+        l.append(num)
+pos_nums,neg_nums=[],[]
+pos_avg,neg_avg=0.0,0.0
+for i in range(len(l)):
+    if l[i]>0:
+        pos_nums.append(l[i])
+        pos_avg+=l[i]
+    else:
+        neg_nums.append(l[i])
+        neg_avg+=l[i]
+print("positive avg:",pos_avg/len(pos_nums))
+print("negative avg:",neg_avg/len(neg_nums))
